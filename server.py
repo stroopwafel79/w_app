@@ -20,12 +20,30 @@ def show_homepage():
 
     return render_template("index.html")
 
-@app.route("/log")
-def update_log_file():
+@app.route("/submit")
+	complete
+	a_setting = 
+	b_setting = 
+	user_choice = 
+
+	update_log_file(a_setting, b_setting, user_choice)
+
+
+
+def update_settings():
+	pass
+
+
+def update_log_file(a_setting, b_setting, user_choice):
 	# get setting for A
 	# get setting for B
 	# get checkbox result
 	# open log file to write it
+	with open("log.txt", a) as log:
+		log.write(f"{a_setting}, {b_setting}, {user_choice}\n")
+
+		
+
 	# Do you have to read the log file before writing to it?
 	# Write to log file
 	return
