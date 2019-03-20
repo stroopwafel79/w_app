@@ -20,6 +20,18 @@ def show_homepage():
 
     return render_template("index.html")
 
+@app.route("/log")
+def update_log_file():
+	# get setting for A
+	# get setting for B
+	# get checkbox result
+	# open log file to write it
+	# Do you have to read the log file before writing to it?
+	# Write to log file
+	return
+
+
+
 
 if __name__ == '__main__':
     # We have to set debug=True here, since it has to be True at the
