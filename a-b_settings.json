@@ -1,0 +1,25 @@
+{ "settings":
+		{
+		 "a_setting": "setLatency1",
+		 "b_setting": "setLatency100",
+		 "tested": "False"
+		},
+		 
+		{
+		 "a_setting": "setLatency2",
+		 "b_setting": "setLatency200",
+		 "tested": "False"
+		},
+
+		{
+		 "a_setting": "setLatency3",
+		 "b_setting": "setLatency300",
+		 "tested": "False"
+		},
+
+		{
+		 "a_setting": "setLatency4",
+		 "b_setting": "setLatency400",
+		 "tested": "False"
+		},
+}

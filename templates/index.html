@@ -21,20 +21,20 @@
 	    	<div class="col">
 	    		<form action="/submit" id="chkbox">
 					<div class="form-check">
-					  	<input class="form-check-input" type="checkbox" value="" id="defaultCheckA">
-					  	<label class="form-check-label" for="defaultCheck1">
+					  	<input class="form-check-input" type="checkbox" value="A" id="defaultCheckA">
+					  	<label class="form-check-label" for="defaultCheckA">
 					    	A
 					  	</label>
 					</div>
 					<div class="form-check">
-					  	<input class="form-check-input" type="checkbox" value="" id="defaultCheckB">
-					  	<label class="form-check-label" for="defaultCheck1">
+					  	<input class="form-check-input" type="checkbox" value="B" id="defaultCheckB">
+					  	<label class="form-check-label" for="defaultCheckB">
 					    	B
 					  	</label>
 					</div>
 					<div class="form-check">
-					  	<input class="form-check-input" type="checkbox" value="" id="defaultCheckN">
-					  	<label class="form-check-label" for="defaultCheck1">
+					  	<input class="form-check-input" type="checkbox" value="Neither" id="defaultCheckN">
+					  	<label class="form-check-label" for="defaultCheckN">
 					    	Neither
 					  	</label>
 					</div>
@@ -56,6 +56,7 @@
 		// Event listner on click of submit button
 		// triggers a post request to the /submit route
 		// TODO populate formInputs values
+		// After submission, checkboxes must be unchecked
 		$("#submit").on('click', (evt) => {
 			evt.preventDefault();
 
@@ -63,30 +64,16 @@
 				// hard coded values for testing
 				'a_setting': 'setLatency_1',
 				'b_setting': 'setLatency_500',
-				'user_choice': 'Neither' // $('#chkbox').val()
+				'user_choice': $('.form-check-input').val() // #####  only sending A no matter what is checked ######
 			};
 
 			$.post('/submit', formInputs, (results) => {
 				alert('Submission successful');
 			});
+
+			$('.form-check-input').prop('checked', false);
+			//$('input:checked').prop('checked', false);
 		});
-
-		// $('#order-form').on('submit', (evt) => {
-		//   evt.preventDefault();
-
-		//   const formInputs = {
-		//     'type': $('#type-field').val(),
-		//     'amount': $('#amount-field').val()
-		//   };
-
-		//   $.post('/new-order', formInputs, (results) => {
-		//     alert(results);
-		//   });
-		// });
-
-
-
-
 
 	</script>
 </body>
