@@ -21,19 +21,17 @@ def show_homepage():
     return render_template("index.html")
 
 
-@app.route("/submit", methods=['POST'])
+@app.route("/submit", methods=['GET', 'POST'])
 def update_log():
 	""" Update log with the setting for both A and B and which setting the user chose """
-
-	#get error: The method is not allowed for the requested URL.
 
 	a_setting = request.form.get("a_setting")
 	b_setting = request.form.get("b_setting")
 	user_choice = request.form.get("user_choice")
-	print(a_setting, b_setting, user_choice)
-
+	
 	update_log_file(a_setting, b_setting, user_choice)
 
+	return redirect("/")
 
 
 def update_settings():
@@ -45,8 +43,8 @@ def update_log_file(a_setting, b_setting, user_choice):
 	# get setting for B
 	# get checkbox result
 	# open log file to write it
-	with open("log.txt", a) as log:
-		log.write(f"{a_setting}, {b_setting}, {user_choice}\n")
+	with open("log.txt", "a") as log:
+		log.write(f"\n{a_setting}, {b_setting}, {user_choice}")
 
 		
 
