@@ -60,9 +60,10 @@
 			evt.preventDefault();
 
 			const formInputs = {
-				'a_setting':
-				'b_setting':
-				'user_choice':
+				// hard coded values for testing
+				'a_setting': 'setLatency_1'
+				'b_setting': 'setLatency_500'
+				'user_choice': 'A'
 			};
 
 			$.post('/submit', formInputs, (results) => {

@@ -20,11 +20,17 @@ def show_homepage():
 
     return render_template("index.html")
 
+
 @app.route("/submit", methods=['POST'])
-	complete
-	a_setting = 
-	b_setting = 
-	user_choice = 
+def update_log():
+	""" Update log with the setting for both A and B and which setting the user chose """
+
+	#get error: The method is not allowed for the requested URL.
+
+	a_setting = request.form.get("a_setting")
+	b_setting = request.form.get("b_setting")
+	user_choice = request.form.get("user_choice")
+	print(a_setting, b_setting, user_choice)
 
 	update_log_file(a_setting, b_setting, user_choice)
 
