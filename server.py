@@ -20,7 +20,7 @@ def show_homepage():
 
     return render_template("index.html")
 
-@app.route("/submit")
+@app.route("/submit", methods=['POST'])
 	complete
 	a_setting = 
 	b_setting = 

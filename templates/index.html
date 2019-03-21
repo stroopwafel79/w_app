@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title></title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
 
@@ -38,7 +39,7 @@
 					  	</label>
 					</div>
 					<div class=submit>
-						<input class="btn btn-primary" type="submit" value="Submit">
+						<input class="btn btn-primary" type="submit" value="Submit" id="submit">
 					</div>
 				</form>
 	    	</div>
@@ -51,6 +52,37 @@
 		// update log file when submit checked
 		// event listener on submit
 		// triggers ajax call to 
+		
+		// Event listner on click of submit button
+		// triggers a post request to the /submit route
+		// TODO populate formInputs values
+		$("#submit").on('click', (evt) => {
+			evt.preventDefault();
+
+			const formInputs = {
+				'a_setting':
+				'b_setting':
+				'user_choice':
+			};
+
+			$.post('/submit', formInputs, (results) => {
+				alert(results):
+			});
+		}
+
+		// $('#order-form').on('submit', (evt) => {
+		//   evt.preventDefault();
+
+		//   const formInputs = {
+		//     'type': $('#type-field').val(),
+		//     'amount': $('#amount-field').val()
+		//   };
+
+		//   $.post('/new-order', formInputs, (results) => {
+		//     alert(results);
+		//   });
+		// });
+
 
 
 
