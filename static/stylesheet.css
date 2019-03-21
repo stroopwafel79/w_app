@@ -1,0 +1,4 @@
+.btn.btn-primary.btn-lg:active, .active {
+    background-color:red;
+    color: white;
+}
