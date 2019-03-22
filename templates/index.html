@@ -9,10 +9,12 @@
 	<div class="container">
 	  	<div class="row">
 	    	<div class="col">
-	      		<button type="button" class="btn btn-primary btn-lg" id="btn-A">A</button>
+	      		<button type="button" class="btn btn-primary btn-lg" id="btn-A" style="border-style:inset">A
+	      		</button>
 	    	</div>
 		    <div class="col">
-		      	<button type="button" class="btn btn-primary btn-lg" id="btn-B">B</button>
+		      	<button type="button" class="btn btn-primary btn-lg" id="btn-B" style="border-style:inset">B
+		      	</button>
 		    </div>
 	  	</div>
 	</div>
@@ -49,11 +51,32 @@
 	<script type="text/javascript">
 		"use strict";
 
+		let aSetting;
+		let bSetting;
+
 		// Button behavior:
 		// Keep button pressed down
 		$(".btn btn-primary btn-lg").click( () => {
 		    $(this).toggleClass("active");
 		});
+
+
+		
+		const sendToUSB = function(setting) {
+			// TODO determine how to send command over USB
+		}
+
+		
+
+		$("#btn-A").on("click", (aSetting) => {
+			sendToUSB(aSetting);
+		});
+
+
+		$("#btn-B").on("click", (bsetting) => {
+			sendToUSB(bsetting);
+		})
+
 
 		// update log file when submit checked
 		$("#submit").on('click', (evt) => {
