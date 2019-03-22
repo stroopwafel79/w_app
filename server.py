@@ -34,8 +34,13 @@ def update_log():
 	return redirect("/")
 
 
+@app.route("/settings", methods=["GET", "POST"])
 def update_settings():
-	pass
+
+	# open JSON file to write to it
+	# change value to false
+	# get next setting for a and b
+	# send to front end 
 
 
 def update_log_file(a_setting, b_setting, user_choice):
