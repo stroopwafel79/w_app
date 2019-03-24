@@ -1,5 +1,6 @@
 """Flask server to run my app on"""
 from jinja2 import StrictUndefined
+import json
 
 from flask import (Flask, render_template, redirect, request, flash,
                    session, url_for, jsonify)
@@ -16,7 +17,7 @@ app.jinja_env.undefined = StrictUndefined
 
 @app.route("/")
 def show_homepage():
-    """ Show the homepage"""
+    """ Show the homepage """
 
     settings = get_settings()
     a_setting = settings[0]
@@ -26,7 +27,13 @@ def show_homepage():
     									 b_setting=b_setting)
 
 def get_settings():
-	
+	""" Read JSON file and get next a,b settings that have not been tested """
+
+	with open("a-b_settings") as json_file:  
+	    data = json.load(json_file)
+	    for p in data['settings']:
+	    	if p["tested"] == False:
+	    		return (p["a_setting"], p["b_setting"])
 
 
 @app.route("/submit", methods=['GET', 'POST'])
