@@ -18,7 +18,15 @@ app.jinja_env.undefined = StrictUndefined
 def show_homepage():
     """ Show the homepage"""
 
-    return render_template("index.html")
+    settings = get_settings()
+    a_setting = settings[0]
+    b_setting =settings[1]
+
+    return render_template("index.html", a_setting=a_setting, 
+    									 b_setting=b_setting)
+
+def get_settings():
+	
 
 
 @app.route("/submit", methods=['GET', 'POST'])
@@ -38,9 +46,15 @@ def update_log():
 def update_settings():
 
 	# open JSON file to write to it
-	# change value to false
-	# get next setting for a and b
-	# send to front end 
+	# update "Tested" value to false
+	# Loop over Tested values
+	# if Tested is False
+	# return those values
+	# send to front end
+
+	with open("a-b_settings.json", "w") as settings:
+		settings.write
+	pass 
 
 
 def update_log_file(a_setting, b_setting, user_choice):
